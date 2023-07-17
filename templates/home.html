@@ -12,26 +12,9 @@
     <button id="14DA_bar">14DA Bar</button>
     <button id="30DA_bar">30DA Bar</button>
     <title>Interactive Visualization</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-    <div id="plot_volume"></div>
-    <div id="plot_avg_token_value"></div>
-    <div id="plot_volume_btc"></div>
-    
-
-    
     <script>
-        // Load the Plotly figures from the passed JSON data
-        var plotVolumeData = {{ plot_volume_json|safe }};
-        Plotly.newPlot('plot_volume', plotVolumeData.data, plotVolumeData.layout);
-
-        var plotAvgTokenValueData = {{ plot_avg_token_value_json|safe }};
-        Plotly.newPlot('plot_avg_token_value', plotAvgTokenValueData.data, plotAvgTokenValueData.layout);
-        
-        var plotVolumeBTCData = {{ plot_volume_btc_json|safe }};
-        Plotly.newPlot('plot_volume_btc', plotVolumeBTCData.data, plotVolumeBTCData.layout);
-        
         document.getElementById('1DA').addEventListener('click', function() {
             // Redirect to API route for button 1
             window.location.href = 'http://13.200.99.235:8001/scatter';
